@@ -5,7 +5,7 @@ const myPeer = new Peer(undefined, {
   host: '/',
   port: '443'
 })
-let myVideoStream;
+var myVideoStream;
 const myVideo = document.createElement('video')
 myVideo.muted = true;
 const peers = {}
@@ -27,7 +27,7 @@ navigator.mediaDevices.getUserMedia({
     connectToNewUser(userId, stream)
   })
   // input value
-  let text = $("input");
+  var text = $("input");
   // when press enter send message
   $('html').keydown(function (e) {
     if (e.which == 13 && text.val().length !== 0) {
@@ -91,7 +91,7 @@ const muteUnmute = () => {
 
 const playStop = () => {
   console.log('object')
-  let enabled = myVideoStream.getVideoTracks()[0].enabled;
+  var enabled = myVideoStream.getVideoTracks()[0].enabled;
   if (enabled) {
     myVideoStream.getVideoTracks()[0].enabled = false;
     setPlayVideo()
