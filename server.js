@@ -1,10 +1,12 @@
+// Tafadzwa Munyuki Zoom_Clone
+// Require dependencies
 const express = require('express')
 const app = express()
-// const cors = require('cors')
-// app.use(cors())
+
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
 const { ExpressPeerServer } = require('peer');
+// Call ExpressPeerServer
 const peerServer = ExpressPeerServer(server, {
   debug: true
 });
@@ -39,4 +41,5 @@ io.on('connection', socket => {
   })
 })
 
+// Listen on port 3030
 server.listen(process.env.PORT||3030)
